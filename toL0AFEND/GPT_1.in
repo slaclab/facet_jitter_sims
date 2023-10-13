@@ -1,0 +1,11 @@
+m=me ;
+q=qe ;
+setfile("beam","bunchData.gdf") ;
+Spacecharge3Dmesh("Cathode");
+map1D_TM("wcs","z",0,"rfgundata.gdf","z","Ez",4.89337e+07,5.14626,1.79447772373049e10) ;
+map1D_B("wcs","z",0,"soldata.gdf","z","Bz",0.252) ;
+trwlinac("wcs","z",2.58,0.1,54e6,3.4225e+07,3.4225e+07,11.7417,0,4.95674,1.79447772373049e10,3.09524) ;
+wakefield("wcs","z",2.58,3.09524,50,"slwake.gdf","z","","","Wz") ;
+screen("wcs","I",4.1274);
+zminmax("wcs","z",0,-0.001,4.1284) ;
+snapshot(0,1.5e-08,5e-12) ;
