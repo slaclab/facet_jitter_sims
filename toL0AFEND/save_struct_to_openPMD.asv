@@ -1,0 +1,24 @@
+function save_struct_to_openPMD(filename, data)
+
+    % Create a base structure for openPMD
+    openPMD = struct;
+    openPMD.attributes = struct('openPMD', '1.1.0', 'openPMDextension', 'BeamPhysics');
+
+    % Map data from input struct to openPMD structure
+    % This is a placeholder. You'll need to implement the actual mapping based on your data and the openPMD standard.
+    openPMD.data = mapDataToOpenPMD(data);
+
+    % Write to HDF5 in openPMD format
+    writeDataToHDF5(filename, openPMD);
+
+end
+
+function openPMD_data = mapDataToOpenPMD(data)
+    % Implement the function to map data from your MATLAB struct to the openPMD format
+    % ...
+end
+
+function writeDataToHDF5(filename, openPMD)
+    % Use MATLAB's HDF5 functions to write the openPMD structure to an HDF5 file
+    % ...
+end
